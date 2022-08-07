@@ -21,40 +21,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpMainView() 
         setUpNumberIndex()
         setUpSlider()
         mainView.layer.cornerRadius = 10
     }
     
     @IBAction func setUpRedIndex() {
-        redIndex.text = String(redSlider.value)
+        redIndex.text = String(format: "%.2f", redSlider.value)
         setUpMainView()
     }
     
     @IBAction func setUpGreenIndex() {
-        greenIndex.text = String(greenSlider.value)
+        greenIndex.text = String(format: "%.2f", greenSlider.value)
         setUpMainView()
     }
     
     @IBAction func setUpBlueIndex() {
-        blueIndex.text = String(blueSlider.value)
+        blueIndex.text = String(format: "%.2f", blueSlider.value)
         setUpMainView()
     }
 
     // MARK: - Private funcs
     private func setUpSlider() {
         redSlider.minimumTrackTintColor = .red
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 1
-        
         greenSlider.minimumTrackTintColor = .green
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 1
-        
         blueSlider.minimumTrackTintColor = .blue
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 1
-    }
+        }
     private func setUpNumberIndex() {
         redIndex.text = String(redSlider.value)
         redIndex.textColor = .red
